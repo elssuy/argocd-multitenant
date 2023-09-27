@@ -1,0 +1,11 @@
+{
+    "name": "argocd",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^16"
+    },
+    "dependencies": {
+        "@lbrlabs/pulumi-scaleway": "^1.10.0",
+        "@pulumi/pulumi": "^3.0.0"
+    }
+}

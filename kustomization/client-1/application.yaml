@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/project
+  value: client-1
+- op: replace
+  path: /spec/destination/name
+  value: client-1
