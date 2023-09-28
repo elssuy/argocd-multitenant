@@ -12,7 +12,7 @@ patches:
       version: v1alpha1
       kind: Application
       name: guestbook
-    path: |- 
+    patch: |- 
       - op: replace
         path: /spec/project
         value: client-1
