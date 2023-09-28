@@ -62,6 +62,8 @@ status:
     admin: {}
 EOF
 
+
+
 kubectl apply -f - <<EOF
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -77,6 +79,26 @@ spec:
   destination:
     name: client-$i
     namespace: guestbook
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+EOF
+
+kubectl apply -f - <<EOF
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tpl-client-$i
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/elssuy/argocd-multitenant
+    targetRevision: HEAD
+    path: kustomization/client-$i
+  destination:
+    name: in-cluster
+    namespace: argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
