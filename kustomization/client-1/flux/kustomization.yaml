@@ -4,18 +4,5 @@ kind: Kustomization
 namePrefix: client-1-
 
 resources:
-- ../../base/nginx/
-
-patches:
-  - target:
-      group: helm.toolkit.fluxcd.io
-      version: v2beta1
-      kind: HelmRelease
-      name: ingress-nginx
-    patch: |- 
-      - op: replace
-        path: /spec/values/controller/resources
-        value: 
-          requets:
-            cpu: 200m
-            memory: 300Mi
+- ./nginx
+- ./nginx-2
