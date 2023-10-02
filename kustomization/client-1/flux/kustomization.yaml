@@ -4,5 +4,5 @@ kind: Kustomization
 namePrefix: client-1-
 
 resources:
-- ./nginx
-- ./nginx-2
+- nginx/kustomization.yaml
+- nginx-2/kustomization.yaml

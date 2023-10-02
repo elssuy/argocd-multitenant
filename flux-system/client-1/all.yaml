@@ -1,11 +1,24 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: root-c1
+  name: n1-c1
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ../../kustomization/client-1/flux/
+  path: ../../kustomization/client-1/flux/nginx
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: n2-c1
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ../../kustomization/client-1/flux/nginx-2
   prune: true
   sourceRef:
     kind: GitRepository
