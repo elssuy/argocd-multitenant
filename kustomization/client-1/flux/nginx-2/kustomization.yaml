@@ -10,14 +10,10 @@ resources:
 
 patches:
   - target:
-      group: helm.toolkit.fluxcd.io
-      version: v2beta1
-      kind: HelmRelease
-      name: ingress-nginx
+      version: v1
+      kind: Deployment
+      name: nginx-deployment
     patch: |- 
       - op: replace
-        path: /spec/values/controller/resources
-        value: 
-          requets:
-            cpu: 200m
-            memory: 300Mi
+        path: /spec/replicas
+        value: 1
