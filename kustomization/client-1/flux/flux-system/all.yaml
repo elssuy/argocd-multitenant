@@ -4,7 +4,7 @@ metadata:
   name: n1-c1
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 3m0s
   path: ./kustomization/client-1/flux/nginx
   prune: true
   sourceRef:
@@ -17,7 +17,7 @@ metadata:
   name: n2-c1
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 3m0s
   path: ./kustomization/client-1/flux/nginx-2
   prune: true
   sourceRef:
