@@ -15,8 +15,5 @@ patches:
       name: ingress-nginx
     patch: |- 
       - op: replace
-        path: /spec/values/controller/resources
-        value: 
-          requets:
-            cpu: 200m
-            memory: 300Mi
+        path: /spec/replicas
+        value: 1

@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/elssuy/argocd-multitenant.git
+  url: https://github.com/elssuy/argocd-multitenant.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./
+  path: ./kustomization/client-2/flux/flux-system
   prune: true
   sourceRef:
     kind: GitRepository
