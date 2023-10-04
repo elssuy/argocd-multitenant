@@ -77,8 +77,8 @@ kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data
 
 3. Connect to admin interface
 
-Username is: `admin`
-Password can be found using this command line:
+- Username is: `admin`
+- Password can be found using this command line:
 ```sh
 kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data.password}}' | base64 -d
 ```
