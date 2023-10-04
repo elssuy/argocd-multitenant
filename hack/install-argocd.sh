@@ -43,3 +43,7 @@ spec:
             port:
               number: 443
 EOF
+
+echo "argocd.$IP.nip.io"
+echo "Use this command line to get admin password: (it takes time please wait a little bit)"
+echo "kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data.password}}' | base64 -d"
