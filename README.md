@@ -65,8 +65,23 @@ export KUBECONFIG=.kubeconfig-admin
 
 ```sh
 ./hack/install-nginx.sh
+# [...]
+
 ./hack/install-argocd.sh
-./hack/export-cluster-to-argocd.sh
+# [...]
+Use this url to connect to argocd admin interface (ssl use self-signed certificate)
+https://argocd.xxx.xxx.xxx.xxx.nip.io
+Use this command line to get admin password: (it takes time please wait a little bit)
+kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data.password}}' | base64 -d
 ```
+
+3. Connect to admin interface
+
+Username is: `admin`
+Password can be found using this command line:
+```sh
+kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data.password}}' | base64 -d
+```
+
 
 
