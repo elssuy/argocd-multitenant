@@ -1,18 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namePrefix: app2-
-namespace: app2
-
+namePrefix: app1-
+namespace: app1
 
 resources:
 - ../../../base/nginx/
 
 patches:
   - target:
-      version: v1
-      kind: Deployment
-      name: nginx-deployment
+      group: helm.toolkit.fluxcd.io
+      version: v2beta1
+      kind: HelmRelease
+      name: ingress-nginx
     patch: |- 
       - op: replace
         path: /spec/replicas

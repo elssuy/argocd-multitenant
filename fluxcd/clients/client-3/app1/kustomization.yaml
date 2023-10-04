@@ -8,7 +8,6 @@ resources:
 - ../../../base/nginx/
 
 patches:
-  - path: ./patch.yaml
   - target:
       group: helm.toolkit.fluxcd.io
       version: v2beta1
@@ -16,8 +15,5 @@ patches:
       name: ingress-nginx
     patch: |- 
       - op: replace
-        path: /spec/
-        value: 
-          requets:
-            cpu: 200m
-            memory: 300Mi
+        path: /spec/replicas
+        value: 1

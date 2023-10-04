@@ -1,6 +1,0 @@
-- op: replace
-  path: /spec/project
-  value: client-3
-- op: replace
-  path: /spec/destination/name
-  value: client-3

@@ -19,8 +19,8 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 10m0s
-  path: ./kustomization/client-2/flux/flux-system
+  interval: 2m0s
+  path: ./fluxcd/clients/client-2/flux-system
   prune: true
   sourceRef:
     kind: GitRepository

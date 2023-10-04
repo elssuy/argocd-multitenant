@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-namePrefix: client-1-
-
-resources:
-- nginx/kustomization.yaml
-- nginx-2/kustomization.yaml
