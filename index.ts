@@ -23,4 +23,3 @@ const clusters = clustesName.map((name) => {
   return c
 })
 
-

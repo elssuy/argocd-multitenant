@@ -9,11 +9,10 @@ resources:
 
 patches:
   - target:
-      group: helm.toolkit.fluxcd.io
-      version: v2beta1
-      kind: HelmRelease
-      name: ingress-nginx
-    patch: |- 
+      version: v1
+      kind: Deployment
+      name: nginx-deployment
+    patch: |-
       - op: replace
         path: /spec/replicas
         value: 1
