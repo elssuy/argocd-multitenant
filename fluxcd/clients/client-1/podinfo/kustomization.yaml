@@ -6,14 +6,14 @@ namespace: podinfo
 resources:
 - ../../../base/podinfo/
 
-# patches:
-  # - target:
-  #     group: helm.toolkit.fluxcd.io
-  #     version: v2beta1
-  #     kind: HelmRelease
-  #     name: wiki
-  #   patch: |-
-  #     - op: replace
-  #       path: /spec/values
-  #       value:
-  #         replicaCount: 2
+patches:
+  - target:
+      group: helm.toolkit.fluxcd.io
+      version: v2beta1
+      kind: HelmRelease
+      name: wiki
+    patch: |-
+      - op: replace
+        path: /spec/values
+        value:
+          replicaCount: 2
