@@ -29,4 +29,4 @@ spec:
         namespace: wiki
       interval: 30s
   values:
-    replicacount: 1
+    replicaCount: 1

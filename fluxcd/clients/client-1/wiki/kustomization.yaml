@@ -16,4 +16,4 @@ patches:
       - op: replace
         path: /spec/values
         value:
-          replicacount: 2
+          replicaCount: 2
