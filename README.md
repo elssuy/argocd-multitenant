@@ -50,7 +50,9 @@ export KUBECONFIG=.kubeconfig-c1
 2. Deploy FluxCD
 
 ```sh
-kubectl apply -k kustomization/client-2/flux/flux-system/ 
+kubectl apply -k kustomization/client-2/flux/flux-system/
+
+flux create secret git flux-system --url=https://git@github.com/elssuy/argocd-multitenant
 ```
 
 # For ArgoCD
@@ -82,6 +84,3 @@ kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data
 ```sh
 kubectl get secret/argocd-initial-admin-secret -n argocd -o go-template='{{.data.password}}' | base64 -d
 ```
-
-
-
